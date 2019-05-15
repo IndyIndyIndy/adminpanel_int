@@ -1,7 +1,7 @@
 {
     "name": "christianessl/adminpanel_int",
     "type": "typo3-cms-extension",
-    "description": "Extend the adminpanel by showing the actual info for each _INT object on the page.",
+    "description": "Extend the adminpanel by showing the actual info for each USER_INT object on the page.",
     "keywords": [
         "TYPO3",
         "extension"

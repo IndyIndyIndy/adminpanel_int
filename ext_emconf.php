@@ -6,7 +6,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Boilerplate Extension',
-    'description' => 'Extend the adminpanel by showing the actual info for each _INT object on the page.',
+    'description' => 'Extend the adminpanel by showing the actual info for each USER_INT object on the page.',
     'category' => 'misc',
     'author' => 'Christian Eßl',
     'author_email' => 'indy.essl@gmail.com',
@@ -18,6 +18,7 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '9.5.0-9.5.99',
+            'adminpanel' => '9.5.0-9.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],

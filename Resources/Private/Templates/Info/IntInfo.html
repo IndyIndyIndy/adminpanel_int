@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<strong>USER_INT count on this page:</strong> {intInfo -> f:count()}
+
+<f:for each="{intInfo}" as="info" key="key">
+  <h2 class="typo3-adminPanel-headline">{key}</h2>
+  <div class="typo3-adminPanel-table-overflow">
+    <table class="typo3-adminPanel-table typo3-adminPanel-table-debug">
+      <thead>
+      <tr>
+        <th scope="col" class="typo3-adminPanel-table-cell-key">
+          Key
+        </th>
+        <th scope="col">
+          Value
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <f:for each="{info.conf}" key="key" as="value">
+        <tr>
+          <th class="typo3-adminPanel-table-cell-key" scope="col">
+            <strong>{key}</strong>
+          </th>
+          <td scope="col">
+            {value}
+          </td>
+        </tr>
+      </f:for>
+      </tbody>
+    </table>
+  </div>
+</f:for>
+
+
+</html>

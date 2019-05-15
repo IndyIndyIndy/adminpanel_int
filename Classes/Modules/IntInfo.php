@@ -18,9 +18,11 @@ use TYPO3\CMS\Adminpanel\ModuleApi\ContentProviderInterface;
 use TYPO3\CMS\Adminpanel\ModuleApi\DataProviderInterface;
 use TYPO3\CMS\Adminpanel\ModuleApi\ModuleData;
 use TYPO3\CMS\Adminpanel\ModuleApi\ResourceProviderInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Fluid\View\StandaloneView;
 
 /**
- * Show info array for _INT objects on the page
+ * Show info array for USER_INT objects on the page
  */
 class IntInfo extends AbstractSubModule implements DataProviderInterface, ContentProviderInterface, ResourceProviderInterface
 {
@@ -50,7 +52,11 @@ class IntInfo extends AbstractSubModule implements DataProviderInterface, Conten
      */
     public function getContent(ModuleData $moduleData): string
     {
-        return serialize($GLOBALS['TSFE']->config['INTincScript']);
+        $view = GeneralUtility::makeInstance(StandaloneView::class);
+        $templateNameAndPath = 'EXT:adminpanel_int/Resources/Private/Templates/Info/IntInfo.html';
+        $view->setTemplatePathAndFilename(GeneralUtility::getFileAbsFileName($templateNameAndPath));
+        $view->assignMultiple($moduleData->getArrayCopy());
+        return $view->render();
     }
 
     /**
