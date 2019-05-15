@@ -1,0 +1,35 @@
+{
+    "name": "christianessl/adminpanel_int",
+    "type": "typo3-cms-extension",
+    "description": "Extend the adminpanel by showing the actual info for each _INT object on the page.",
+    "keywords": [
+        "TYPO3",
+        "extension"
+    ],
+    "license": ["GPL-2.0-or-later"],
+    "homepage": "https://christianessl.at",
+    "authors": [
+        {
+            "name": "Christian Essl",
+            "role": "Developer"
+        }
+    ],
+    "version": "0.1.0",
+    "require": {
+        "typo3/cms-core": "^9.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChristianEssl\\AdminpanelInt\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ChristianEssl\\AdminpanelInt\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "adminpanel_int": "self.version",
+        "typo3-ter/adminpanel_int": "self.version"
+    }
+}
